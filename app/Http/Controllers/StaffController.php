@@ -7,10 +7,34 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group B. Stores Staffs
+ *
+ * APIs for Stores Staffs
+ **/
+
 class StaffController extends Controller
 {
     /**
-     * @throws \Illuminate\Validation\ValidationException
+     * Add Data Actor to Film
+     *
+     * @urlParam id integer ID Actor. Example: 1
+     * @bodyParam first_name string required This is a first name staff. Example: sherina
+     * @bodyParam last_name string required This is a last name staff. Example: shina
+     * @bodyParam email string This is a email staff. Example: shina.sherina@gmail.com
+     * @bodyParam username string required This is a username staff. Example: shinasherina
+     * @bodyParam password string required This is a username staff. Example: &L1s@blacp1nk
+     * @bodyParam address_id integer required This is a id address. Example: 1
+     * @bodyParam strore_id integer required This is a id store. Example: 2
+     * @bodyParam picture string required This is a  picture staff.
+     * @response
+     * {
+     * "message": "OK, Success to save data",
+     * }
+     *
+     * @response status=401 {
+     *      "message": "Failed to save data",
+     * }
      */
     public function addStaffStore(Request $request, $id)
     {
